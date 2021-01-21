@@ -3,6 +3,7 @@ package com.revature.eval.java.core;
 import java.util.List;
 import java.util.Map;
 
+
 public class EvaluationService {
 
 	/**
@@ -22,7 +23,9 @@ public class EvaluationService {
 
 		public static long toMilesPerHour(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return 0;
+			long result = (long)(kilometersPerHour * 0.621371);
+			
+			return result;
 		}
 
 		/**
@@ -42,8 +45,12 @@ public class EvaluationService {
 		 */
 		public static String printConversion(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return null;
-		}
+			double mph = kilometersPerHour * 0.621371;
+			String result = kilometersPerHour + " KPH is equal to " + mph + " MPH.";
+			return result;
+			
+			
+			}
 	}
 
 	/**
@@ -66,9 +73,18 @@ public class EvaluationService {
 	 * If the parameter kiloBytes is less than 0 then print the text "Invalid
 	 * Value".
 	 */
-	public String printMegaBytesAndKiloBytes(int XX) {
+	public static String printMegaBytesAndKiloBytes(int kb) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		
+		while(kb >= 0) {
+		int mb =  (int) (kb * 0.001);
+		System.out.println(mb);
+		int res = kb - (mb * 1000);
+		String result = kb + " kiloBytes is equal to " + mb +" megaBytes and " + res + " kiloBites";
+		return result;
+		}
+		return "Error Try again";
+		
 	}
 
 	/**
@@ -92,6 +108,7 @@ public class EvaluationService {
 	 */
 	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
 		// TODO Write an implementation for this method declaration
+		if((isBarking == true) &&(hourOfDay))
 		return false;
 	}
 
@@ -423,7 +440,7 @@ public class EvaluationService {
 	/**
 	 * 19. Pangram
 	 * 
-	 * Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
+	 * Determine if a sentence is a pangram. A pangram (Greek: Ï€Î±Î½ Î³Ï�Î¬Î¼Î¼Î±, pan
 	 * gramma, "every letter") is a sentence using every letter of the alphabet at
 	 * least once. The best known English pangram is:
 	 * 
