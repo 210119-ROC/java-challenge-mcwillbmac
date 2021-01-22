@@ -106,10 +106,23 @@ public class EvaluationService {
 	 * 
 	 * If the hourOfDay parameter is less than 0 or greater than 23, return false.
 	 */
-	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
+	public static boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
 		// TODO Write an implementation for this method declaration
-		if((isBarking == true) &&(hourOfDay))
-		return false;
+	    boolean getUp = false;
+	    if((hourOfDay < 0)||(hourOfDay >=24)) {
+	    	System.out.println("Out of bounds. Try again");
+	    	
+	    }else if((isBarking == true) && (hourOfDay >= 0 && hourOfDay <=8 )) {
+			getUp = true;
+			System.out.println("The dog is barking. You have to get up and get him.");
+			return getUp;
+		}
+		else if((isBarking == true) && (hourOfDay >= 23) && (hourOfDay < 24)) {
+		getUp = true;
+		System.out.println("The dog is barking. You have to get up and get him.");
+		return getUp;
+		}
+	    return getUp = false;
 	}
 
 	/**
@@ -123,8 +136,14 @@ public class EvaluationService {
 	 * 
 	 * Otherwise, return false;
 	 */
-	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
+	public static boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
 		// TODO Write an implementation for this method declaration
+		if(firstNum == secondNum) {
+			System.out.println(firstNum + " is equal to "+ secondNum + ".");
+			return true;
+		}
+		System.out.println("Numbers do not match. ");
+		
 		return false;
 	}
 
@@ -142,16 +161,35 @@ public class EvaluationService {
 
 		public static boolean hasTeen(int x, int y, int z) {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if((x<=12)||(x>=20)){
+				System.out.println(x+" is not a teen");
+				if((y<=12)||(y>=20)) {
+					System.out.println(y+" is not a teen");
+					if((z<=12)||(z>=20)){
+						System.out.println(z+" is not a teen");
+					}else
+						System.out.println(z+" is a teen");
+				}else
+					System.out.println(y+" is a teen");
+				}
+			else
+				System.out.println(x+" is a teen");
+			return true;
+			
 		}
 
 		// We can initialize isTeen method first
 		// Then pass the parameter to hasTeen method
 
-		public static boolean isTeen(int number) {
+		public static int isTeen(int number) {
 			// TODO Write an implementation for this method declaration
-			return false;
+			if((number <=12)||(number>=20)) {
+				System.out.println("No teen ");
+			}
+			
+			return number;
 		}
+
 	}
 
 	/**
